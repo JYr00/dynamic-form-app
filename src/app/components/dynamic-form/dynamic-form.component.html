@@ -1,0 +1,16 @@
+<div>
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div *ngFor="let control of meta" class="form-row">
+      <app-control [control]="control" [form]="form"></app-control>
+    </div>
+
+    <div class="form-row">
+        <button type="submit" class="btn-primary" [disabled]="!form.valid">Guardar</button>
+    </div>
+  </form>
+
+  <div *ngIf="payload" class="form-row">
+    <strong>Guardando los siguientes valores</strong>
+    {{ payload }}}
+  </div>
+</div>
